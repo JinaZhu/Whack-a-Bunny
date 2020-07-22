@@ -15,6 +15,10 @@ body {
   padding: 0;
   margin: 0;
   font-family: "Amatic SC", cursive;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 h1 {
@@ -36,7 +40,7 @@ h1 {
   height: 400px;
   display: flex;
   flex-wrap: wrap;
-  margin: 0 auto;
+  /* margin: 0 auto; */
 }
 
 .hole {
@@ -69,4 +73,20 @@ h1 {
 
 .hole.up .mole {
   top: 0;
+}
+
+button {
+  margin-top: 3rem;
+  padding: 2rem;
+  font-size: 2rem;
+  color: #555548;
+  border: none;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 1rem;
+}
+
+button:hover {
+  background-color: #555548;
+  color: white;
 }
