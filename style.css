@@ -28,7 +28,8 @@ h1 {
   margin-bottom: 0;
 }
 
-.score {
+.score,
+.high-score {
   background: rgba(255, 255, 255, 0.2);
   padding: 0 3rem;
   line-height: 1;
@@ -73,6 +74,20 @@ h1 {
 
 .hole.up .mole {
   top: 0;
+}
+
+.highest-score-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.high {
+  text-align: center;
+  font-size: 5rem;
+  line-height: 1;
+  margin-bottom: 0;
 }
 
 button {
