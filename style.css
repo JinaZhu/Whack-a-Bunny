@@ -62,7 +62,7 @@ h1 {
   bottom: -30px;
 }
 
-.mole {
+.bunny {
   background: url("rabbit.svg") bottom center no-repeat;
   background-size: 60%;
   position: absolute;
@@ -72,7 +72,7 @@ h1 {
   transition: all 0.4s;
 }
 
-.hole.up .mole {
+.hole.up .bunny {
   top: 0;
 }
 

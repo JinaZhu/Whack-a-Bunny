@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Whack A Mole!</title>
+    <title>Whack A Bunny!</title>
     <link
       href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700"
       rel="stylesheet"
@@ -17,22 +17,22 @@
     </div>
     <div class="game">
       <div class="hole hole1">
-        <div class="mole"></div>
+        <div class="bunny"></div>
       </div>
       <div class="hole hole2">
-        <div class="mole"></div>
+        <div class="bunny"></div>
       </div>
       <div class="hole hole3">
-        <div class="mole"></div>
+        <div class="bunny"></div>
       </div>
       <div class="hole hole4">
-        <div class="mole"></div>
+        <div class="bunny"></div>
       </div>
       <div class="hole hole5">
-        <div class="mole"></div>
+        <div class="bunny"></div>
       </div>
       <div class="hole hole6">
-        <div class="mole"></div>
+        <div class="bunny"></div>
       </div>
     </div>
     <button onClick="startGame()">Start!</button>
@@ -40,7 +40,7 @@
       const holes = document.querySelectorAll(".hole");
       const scoreBoard = document.querySelector(".score");
       const highScore = document.querySelector(".high-score");
-      const moles = document.querySelectorAll(".mole");
+      const bunnies = document.querySelectorAll(".bunny");
       const storeScore = JSON.parse(localStorage.getItem("score")) || 0;
       let lastHole;
       let timeUp = false;
@@ -91,7 +91,7 @@
         scoreBoard.textContent = score;
       }
 
-      moles.forEach((mole) => mole.addEventListener("click", bonk));
+      bunnies.forEach((bunny) => bunny.addEventListener("click", bonk));
 
       function setHighScore() {
         if (storeScore === null) {
