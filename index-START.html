@@ -39,11 +39,14 @@
     <script>
       const holes = document.querySelectorAll(".hole");
       const scoreBoard = document.querySelector(".score");
+      const highScore = document.querySelector(".high-score");
       const moles = document.querySelectorAll(".mole");
-      const storeScore = JSON.parse(localStorage.getItem("score"));
+      const storeScore = JSON.parse(localStorage.getItem("score")) || 0;
       let lastHole;
       let timeUp = false;
       let score = 0;
+
+      highScore.textContent = storeScore;
 
       function randomTime(min, max) {
         return Math.round(Math.random() * (max - min) + min);
@@ -73,7 +76,11 @@
         timeUp = false;
         score = 0;
         peep();
-        setTimeout(() => (timeUp = true), 10000);
+        setTimeout(() => {
+          timeUp = true;
+          setHighScore();
+          highScore.textContent = storeScore;
+        }, 10000);
       }
 
       function bonk(e) {
@@ -86,8 +93,10 @@
 
       moles.forEach((mole) => mole.addEventListener("click", bonk));
 
-      function setHighScore(e) {
-        e.preventDefault();
+      function setHighScore() {
+        if (storeScore === null) {
+          localStorage.setItem("score", JSON.stringify(0));
+        }
         if (score > storeScore) {
           localStorage.setItem("score", JSON.stringify(score));
         }
